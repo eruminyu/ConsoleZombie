@@ -1,0 +1,59 @@
+# Visual Studio user and workspace state
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.opendb
+*.opensdf
+*.sdf
+*.code-workspace
+
+# Build outputs
+[Dd]ebug/
+[Rr]elease/
+[Dd]ebugPublic/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Bb]in/
+[Oo]bj/
+[Bb]uild/
+[Oo]ut/
+*.exe
+*.dll
+*.lib
+*.exp
+*.ilk
+*.pdb
+*.obj
+*.o
+*.iobj
+*.ipdb
+*.idb
+*.pch
+*.aps
+*.res
+*.ncb
+*.tlog
+*.lastbuildstate
+ipch/
+
+# CMake-generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+
+# Local logs, caches, and temporary files
+*.log
+*.tmp
+*.cache
+
+# Local renderer inspection output
+PrototypeSnapshot.*

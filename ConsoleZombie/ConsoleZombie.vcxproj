@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{A1796508-E848-4C1D-A438-2B9251850BF3}</ProjectGuid>
+    <RootNamespace>ConsoleZombie</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)Bin\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>ConsoleZombie</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>$(SolutionDir)</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>$(SolutionDir)</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AI\AStar.cpp" />
+    <ClCompile Include="Game\Balance.cpp" />
+    <ClCompile Include="Game\BreachSystem.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
+    <ClCompile Include="Game\Hud.cpp" />
+    <ClCompile Include="Game\GamePlayer.cpp" />
+    <ClCompile Include="Game\GameZombies.cpp" />
+    <ClCompile Include="Game\SelfTest.cpp" />
+    <ClCompile Include="Game\StatusLog.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Platform\Terminal.cpp" />
+    <ClCompile Include="Game\AudioCues.cpp" />
+    <ClCompile Include="Platform\AudioDevice.cpp" />
+    <ClCompile Include="Platform\TextRaster.cpp" />
+    <ClCompile Include="Platform\WavFile.cpp" />
+    <ClCompile Include="Render\RaycastRenderer.cpp" />
+    <ClCompile Include="Render\RenderDigest.cpp" />
+    <ClCompile Include="World\Grid.cpp" />
+    <ClCompile Include="World\MapGenerator.cpp" />
+    <ClCompile Include="World\MapGeneratorDetail.cpp" />
+    <ClCompile Include="World\MapValidation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AI\AStar.h" />
+    <ClInclude Include="Core\Types.h" />
+    <ClInclude Include="Game\Balance.h" />
+    <ClInclude Include="Game\BreachSystem.h" />
+    <ClInclude Include="Game\Game.h" />
+    <ClInclude Include="Game\Hud.h" />
+    <ClInclude Include="Game\StatusLog.h" />
+    <ClInclude Include="Platform\Terminal.h" />
+    <ClInclude Include="Game\AudioCues.h" />
+    <ClInclude Include="Platform\AudioDevice.h" />
+    <ClInclude Include="Platform\TextRaster.h" />
+    <ClInclude Include="Platform\WavFile.h" />
+    <ClInclude Include="Render\PixelBuffer.h" />
+    <ClInclude Include="Render\RaycastRenderer.h" />
+    <ClInclude Include="Render\RenderDigest.h" />
+    <ClInclude Include="World\Grid.h" />
+    <ClInclude Include="World\MapGenerator.h" />
+    <ClInclude Include="World\MapGeneratorDetail.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Config\GameBalance.ini" />
+  </ItemGroup>
+  <Target Name="CopyGameConfig" AfterTargets="Build">
+    <!-- The deployment layout Balance::FindConfigFile looks for first: Config next to
+         the executable. Without this the exe only finds a config by walking up into
+         the repository, so a copy taken anywhere else silently runs on the built in
+         defaults.
+
+         This had Inputs/Outputs once and it was wrong, for the reason the bake target
+         below spells out: timestamps only answer "is the source newer", and a source
+         can go backwards. A git checkout or a restored backup left an older original
+         beside a newer copy, the copy was kept, and the copy is the one the game
+         reads. That is the whole bug this work is about, sitting in the build.
+
+         SkipUnchangedFiles still makes the ordinary case free. It compares size and
+         write time rather than asking which is newer, so it copies whenever the two
+         differ in either direction. -->
+    <Copy SourceFiles="$(SolutionDir)Config\GameBalance.ini" DestinationFolder="$(OutDir)Config" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="CopyGameAssets" AfterTargets="Build">
+    <!-- Same deployment rule as the config, and the same trap with it: a stale copy
+         beside the executable is found before a fresh one in the repository, so
+         replacing a wav without building leaves the old sound playing. No
+         Inputs/Outputs here because the set of files changes as assets are added,
+         and SkipUnchangedFiles already makes the repeat case cheap. -->
+    <ItemGroup>
+      <GameSoundAssets Include="$(SolutionDir)Assets\Sound\*.wav" />
+    </ItemGroup>
+    <Copy SourceFiles="@(GameSoundAssets)" DestinationFolder="$(OutDir)Assets\Sound" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="BakeBalanceDefaults" BeforeTargets="ClCompile">
+    <!-- The built-in defaults, generated from the shipped config instead of typed a
+         second time in Balance.h.
+
+         They used to be two hand-written copies of the same game, and the header
+         comment said so and asked people to keep them in step. People did not, twice
+         in one day: a tuned ini against stale defaults, and then a budget constant
+         that made every seed unbuildable. The self test caught both, which is the
+         point of it, but catching a mistake is worse than not being able to make it.
+
+         Raw string literal, so quotes and backslashes in the ini need no escaping.
+         The delimiter has to be one the file cannot contain, and ")BALANCEINI" is
+         not a thing an ini says.
+
+         No Inputs/Outputs on purpose. Timestamp comparison asks whether the input is
+         newer than the output, and a file can go backwards in time: a git checkout, a
+         revert, a restored backup. Any of those leaves the baked copy stale while
+         MSBuild reports the target up to date, which is the same "the file you
+         edited is not the file being read" this whole thing exists to end, one level
+         further in. Reading a seven kilobyte ini every build costs nothing, and
+         WriteOnlyWhenDifferent means nothing downstream rebuilds unless the contents
+         actually moved. -->
+    <PropertyGroup>
+      <BalanceIniText>$([System.IO.File]::ReadAllText('$(SolutionDir)Config\GameBalance.ini'))</BalanceIniText>
+    </PropertyGroup>
+    <MakeDir Directories="$(IntDir)" />
+    <WriteLinesToFile File="$(IntDir)GameBalanceDefaults.g.h" Overwrite="true" WriteOnlyWhenDifferent="true"
+                      Lines="// Generated from Config/GameBalance.ini by the BakeBalanceDefaults target.%0D%0A// Do not edit: edit the ini.%0D%0A%23pragma once%0D%0A%0D%0Anamespace Zombie%0D%0A{%0D%0A    inline constexpr char DefaultBalanceIni[] = R&quot;BALANCEINI(%0D%0A$(BalanceIniText)%0D%0A)BALANCEINI&quot;%3B%0D%0A}%0D%0A" />
+  </Target>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

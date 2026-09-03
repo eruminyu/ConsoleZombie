@@ -1,0 +1,77 @@
+{
+  "_comment": [
+    "Windows Terminal 게임 전용 프로필. 아래 profile 객체를 settings.json 의",
+    "profiles.list 배열에 통째로 붙여넣는다. Windows Terminal 은 콘솔 API 의 폰트",
+    "설정을 무시하고 이 프로필의 font.size 를 쓰므로, 해상도를 올리려면 여기서",
+    "size 를 줄여야 한다. 사용자가 창을 최대화하면 게임은 그때의 뷰포트 셀 수에",
+    "프레임버퍼를 1:1 로 맞춘다.",
+    "",
+    "settings.json 위치:",
+    "  %LOCALAPPDATA%\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json",
+    "",
+    "1440x900 기준 예상치 (size 를 줄일수록 선명해진다):",
+    "  size 12 -> 약 148x43 셀  -> 논리 148x86",
+    "  size  8 -> 약 222x64 셀  -> 논리 222x128",
+    "  size  6 -> 약 296x86 셀  -> 논리 296x172   <- 기본값",
+    "  size  5 -> 약 355x103 셀 -> 논리 355x206",
+    "",
+    "실측 (2026-08-28, 노트북, 표시 배율 200%, Visual Studio Debug Console 프로필):",
+    "  size 12 -> 202x59 셀  -> 프레임 202x118 -> em  9   한글이 뭉개진다",
+    "  size  6 -> 353x100 셀 -> 프레임 353x200 -> em 11   확인됨",
+    "",
+    "HUD 글자 크기는 프레임 높이를 따라간다. ui_text_height = 0 이면",
+    "em = clamp(프레임높이 / 18, 9, 16) 이고, 프레임 높이는 render_max_height",
+    "(기본 200)에서 멈춘다. 즉 자동 em 의 상한은 11 이다.",
+    "",
+    "  행 59       -> 프레임 높이 118 -> em  9   한글이 빠듯하다",
+    "  행 99       -> 프레임 높이 198 -> em 11",
+    "  행 100 이상 -> 프레임 높이 200 (상한) -> em 11, 여기서 더 안 커진다",
+    "",
+    "폰트를 줄이면 글자가 화면에서 작아지는 것이 아니라 프레임이 커진다.",
+    "HUD 는 프레임 픽셀로 그려지므로 글자는 오히려 더 또렷해지고, 화면에서",
+    "차지하는 비율은 줄어든다. ui_text_height 를 직접 올리는 것과 정반대다.",
+    "",
+    "ui_text_height 를 8 이하로 직접 지정하지 마라. 자동 계산의 하한 9 는",
+    "한글 음절이 8 픽셀에 안 들어가서 있는 것이다. 획이 붙어 다른 글자로 읽힌다.",
+    "F2 타이틀바가 실제 em 과 프레임 크기를 찍으므로 거기서 확인한다.",
+    "",
+    "F5 디버깅은 이 프로필이 아니라 Visual Studio 가 등록한",
+    "'Visual Studio Debug Console' 프로필을 쓴다. F5 로 논다면 그쪽의",
+    "font.size 를 고쳐야 하고, 평소 쓰는 PowerShell 프로필은 안 건드려도 된다.",
+    "",
+    "commandline 은 실제 빌드 출력 경로에 맞춰 고친다."
+  ],
+
+  "profile": {
+    "name": "Console Zombie",
+    "commandline": "C:\\Project\\ConsoleZombie\\Bin\\x64\\Debug\\ConsoleZombie\\ConsoleZombie.exe",
+    "startingDirectory": "C:\\Project\\ConsoleZombie",
+
+    "font": {
+      "face": "Cascadia Mono",
+      "size": 6
+    },
+
+    "padding": "0",
+    "scrollbarState": "hidden",
+    "antialiasingMode": "aliased",
+    "useAcrylic": false,
+    "opacity": 100,
+    "snapOnInput": false,
+    "altGrAliasing": false,
+    "historySize": 0,
+    "cursorShape": "emptyBox",
+    "colorScheme": "Campbell",
+    "experimental.retroTerminalEffect": false,
+    "closeOnExit": "graceful"
+  },
+
+  "_notes": {
+    "padding": "0 으로 두면 창 가장자리 여백이 사라져 셀을 몇 개 더 확보한다.",
+    "scrollbarState": "hidden 이면 세로 스크롤바가 차지하던 가로 셀을 돌려받는다.",
+    "antialiasingMode": "aliased 가 픽셀 아트에 맞고 작은 글자에서 번짐이 없다.",
+    "historySize": "게임은 화면 전체를 매 프레임 다시 그리므로 스크롤백이 필요 없다.",
+    "useAcrylic": "투명 효과는 렌더 비용만 늘린다.",
+    "launchMode": "전역 설정에 \"launchMode\": \"maximized\" 를 넣으면 창이 처음부터 최대화된다. 게임은 창을 직접 최대화하지 않는다."
+  }
+}
