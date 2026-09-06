@@ -10,6 +10,25 @@ True Color와 `▀` 반블록 문자로 픽셀 화면을 출력합니다.
 
 > 현재 단계: **Prototype 0.1** · Windows 전용
 
+## 게임 화면
+
+### 메인 화면
+
+![Console Zombie 메인 화면 — 게임 제목과 시작 메뉴, 조작 안내](docs/images/main-menu.png)
+
+### 첫 시작 화면
+
+열쇠를 찾아 탈출구로 돌아오는 여정의 시작입니다. 터미널 위에 그려지는 1인칭
+픽셀 화면과 체력·탄약 HUD를 확인할 수 있습니다.
+
+![Console Zombie 첫 시작 화면 — 1인칭 시점과 체력·탄약 HUD, 탈출 목표 안내](docs/images/game-start.png)
+
+### 게임 플레이 영상
+
+[![Console Zombie 게임 플레이 영상 — 클릭하여 YouTube에서 보기](https://img.youtube.com/vi/yXjKKeqMKQk/hqdefault.jpg)](https://youtu.be/yXjKKeqMKQk)
+
+썸네일을 클릭하면 YouTube에서 게임 플레이 영상을 볼 수 있습니다.
+
 ## 핵심 특징
 
 - **터미널 픽셀 렌더링** — DDA 레이캐스팅, 깊이 버퍼, 거리 명암, 픽셀 좀비
