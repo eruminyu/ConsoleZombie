@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <AI/AStar.h>
 #include <Game/AudioCues.h>
@@ -217,8 +217,8 @@ namespace Zombie
         std::vector<ZombieAgent> zombies;
         Vec2 playerPosition{};
         float playerAngle = 0.0f;
-        int health = 3;
-        int ammo = 3;
+        int health = 0;
+        int ammo = 0;
         bool hasKey = false;
         bool won = false;
         bool lost = false;

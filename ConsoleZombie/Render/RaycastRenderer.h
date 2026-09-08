@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <Render/PixelBuffer.h>
 #include <World/Grid.h>
@@ -65,8 +65,8 @@ namespace Zombie
         Vec2 playerPosition{};
         float playerAngle = 0.0f;
         Int2 aimPixel{ 60, 40 };
-        int health = 3;
-        int ammo = 3;
+        int health = 0;
+        int ammo = 0;
         bool hasKey = false;
         bool showDebugMap = false;
         float rollReady = 1.0f;
@@ -74,7 +74,7 @@ namespace Zombie
         float stamina = 1.0f;
         // HUD 글자의 em 높이(프레임 픽셀). 게이지가 체력 표시 아래에 앉는데,
         // 그 표시가 더 이상 고정 2픽셀이 아니다.
-        int uiTextHeight = 12;
+        int uiTextHeight = 0;
         // 뒤돌아보기 키는 플레이어를 안 돌리고 카메라만 돌린다.
         bool lookingBehind = false;
         // 무기가 얼마나 아래로 밀렸는가, 프레임 높이에 대한 비율로. 쉬면 0 이다.

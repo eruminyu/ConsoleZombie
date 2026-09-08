@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <Game/StatusLog.h>
 #include <Platform/TextRaster.h>
@@ -16,8 +16,8 @@ namespace Zombie
     // 검사할 수 있도록 떼어 놓았다.
     struct HudState
     {
-        int health = 3;
-        int ammo = 3;
+        int health = 0;
+        int ammo = 0;
         bool hasKey = false;
         float framesPerSecond = 0.0f;
         bool lookingBehind = false;
